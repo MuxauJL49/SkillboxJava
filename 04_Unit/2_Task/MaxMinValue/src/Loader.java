@@ -1,11 +1,11 @@
 
 public class Loader {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println("Max double - " + Double.MAX_VALUE + "\n" +
-                "Min double - " + Double.MIN_VALUE + "\n"
-                );
+                "Min double - " + (-Double.MAX_VALUE) + "\n"
+        );
         System.out.println("Max float - " + Float.MAX_VALUE + "\n" +
-                "Min float - " + Float.MIN_VALUE + "\n"
+                "Min float - " + (-Float.MAX_VALUE) + "\n"
         );
         System.out.println("Max integer - " + Integer.MAX_VALUE + "\n" +
                 "Min integer - " + Integer.MIN_VALUE + "\n"
