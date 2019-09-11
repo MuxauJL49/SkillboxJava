@@ -21,9 +21,13 @@ public class Loader {
         }
 
         //print information about trucks
+        numberBox = 1;
         for (Truck truck : trucksPark) {
             System.out.println("Truck " + (trucksPark.indexOf(truck) + 1));
             for (int container = 0; container < truck.getMaxContainers(); container++) {
+                if (numberBox < 0) {
+                    break;
+                }
                 System.out.println("\tContainer " + (container + 1));
                 for (int box = 0; box < truck.getMaxBoxses(); box++) {
                     numberBox = truck.getNumberBox(container, box);
