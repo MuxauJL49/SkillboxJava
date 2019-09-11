@@ -6,13 +6,13 @@ public class Truck {
     private int[][] listBoxesInTruck;
 
     public Truck() {
-        maxContainers = 12 - 1;
-        maxBoxses = 27 - 1;
+        maxContainers = 12;
+        maxBoxses = 27;
     }
 
     public Truck(int container, int boxes) {
-        maxContainers = container - 1;
-        maxBoxses = boxes - 1;
+        maxContainers = container;
+        maxBoxses = boxes;
     }
 
     //return number of last box in the truck or -1 if all boxes is loaded and truck isn't filled in.
