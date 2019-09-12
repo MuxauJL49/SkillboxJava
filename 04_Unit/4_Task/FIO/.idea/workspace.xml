@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28ef49ec-b27c-4b00-847f-71a710380356" name="Default Changelist" comment="" />
+    <list default="true" id="28ef49ec-b27c-4b00-847f-71a710380356" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../5_Task/PhoneNumbers/src/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3_Task/DeliveryBox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../3_Task/DeliveryBox/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6_Task/HappyBirthday/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../6_Task/HappyBirthday/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6_Task/HappyBirthday/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../6_Task/HappyBirthday/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6_Task/HappyBirthday/src/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../6_Task/HappyBirthday/src/Loader.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,16 +17,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Loader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="59" lean-forward="true" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+            <state relative-caret-position="255">
+              <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -51,8 +57,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="266" />
-    <option name="y" value="106" />
+    <option name="x" value="153" />
+    <option name="y" value="9" />
     <option name="width" value="1440" />
     <option name="height" value="780" />
   </component>
@@ -79,7 +85,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../3_Task/DeliveryBox" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../6_Task/HappyBirthday" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -122,8 +128,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17750533" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17910448" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -154,8 +161,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Loader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="59" lean-forward="true" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+        <state relative-caret-position="255">
+          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
         </state>
       </provider>
     </entry>

@@ -3,14 +3,35 @@ import java.util.Scanner;
 public class Loader {
     public static void main(String[] args) {
         String[][] FIO = {{"Фамилия", ""}, {"Имя", ""}, {"Отчество", ""}};
+        Scanner scaner = new Scanner(System.in);
+        String[] inputTextArr;
 
         System.out.println("Введите (Фамилию Имя Отчество):");
-        Scanner scaner = new Scanner(System.in);
-        String[] inputText = scaner.nextLine().split(" +");
+        String inputText = scaner.nextLine();
+
+
+        if (inputText.contains(" ")) {
+            inputTextArr = inputText.split(" +");
+        } else {
+            inputTextArr = new String[]{"", inputText, ""};
+        }
 
         for (int i = 0; i <= 2; i++) {
-            FIO[i][1] = inputText[i];
-            System.out.println(FIO[i][0] + " - " + FIO[i][1]);
+            if(inputTextArr.length - 1 < i) {
+                break;
+            }
+            FIO[i][1] = inputTextArr[i];
+        }
+
+        printFIO(FIO);
+    }
+
+
+    public static void printFIO(String[][] FIO) {
+        for (String[] item : FIO) {
+            if (!item[1].equals("")) {
+                System.out.println(item[0] + " - " + item[1]);
+            }
         }
     }
 }
