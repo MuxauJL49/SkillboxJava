@@ -15,22 +15,16 @@ public class Loader {
     }
 
     public static double findAmount(String name, String text) {
-        String foundAmount = "";
-
         //filter for incorrect name
         if (!text.contains(name)) {
             return 0.0d;
         }
 
-        for (int indx = text.indexOf(name); ; indx++) {
-            try {
-                Double.parseDouble(Character.toString(text.charAt(indx)));
+        String foundAmount = "0";
+        for (int indx = text.indexOf(name); indx < text.length(); indx++) {
+            if (Character.isDigit(text.charAt(indx))) {
                 foundAmount = text.substring(indx, text.indexOf(" ", indx));
                 break;
-            } catch (Exception e) {
-                if (indx > text.length()) {
-                    return 0.0d;
-                }
             }
         }
         return Double.parseDouble(foundAmount);
