@@ -7,7 +7,7 @@ public class Truck {
 
     public Truck() {
         maxContainers = 12;
-        maxBoxses = 27;
+        maxBoxses = 28;
     }
 
     public Truck(int container, int boxes) {
