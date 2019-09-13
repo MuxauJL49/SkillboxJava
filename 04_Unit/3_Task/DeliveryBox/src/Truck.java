@@ -7,28 +7,27 @@ public class Truck {
 
     public Truck() {
         maxContainers = 12;
-        maxBoxses = 28;
+        maxBoxses = 27;
     }
 
     public Truck(int container, int boxes) {
         maxContainers = container;
         maxBoxses = boxes;
+        if (boxes <= 0 || container <= 0) {
+            throw new NullPointerException("Error in building a truck.");
+        }
     }
 
     //return number of last box in the truck or -1 if all boxes is loaded and truck isn't filled in.
     public int fillInTruck(int boxes, int numFirstBox) {
-        boxes -= (numFirstBox - 1);
         listBoxesInTruck = new int[maxContainers][maxBoxses];
-        for (int cont = 0; cont < maxContainers; cont++) {
-            for (int box = 0; box < maxBoxses; box++) {
-                if (boxes == 0) {
-                    return -1;
-                }
+        for (int cont = 0; (cont < maxContainers) && (boxes > 0); cont++) {
+            for (int box = 0; (box < maxBoxses) && (boxes > 0); box++) {
                 listBoxesInTruck[cont][box] = numFirstBox++;
                 boxes--;
             }
         }
-        return numFirstBox;
+        return (boxes == 0) ? (-1) : numFirstBox;
     }
 
 
@@ -36,8 +35,12 @@ public class Truck {
         return maxContainers;
     }
 
-    public int getMaxBoxses() {
+    public int getMaxBoxsesInContainer() {
         return maxBoxses;
+    }
+
+    public int getMaxBoxesInTruk() {
+        return maxBoxses * maxContainers;
     }
 
     public int[][] getListBoxesInTruck() {
