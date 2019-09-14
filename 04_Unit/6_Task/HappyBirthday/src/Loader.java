@@ -1,50 +1,63 @@
-import java.text.SimpleDateFormat;
-
-
-//java.time.LocalDate!!
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.TextStyle;
+import java.util.Locale;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class Loader {
     public static void main(String[] args) {
-
         boolean exitLoop;
-        String inputDate;
-        Calendar nowDate;
-        Calendar happyBirthday;
-        Calendar happyBirthdayCal;
+        int counter;
+        LocalDate nowDate = LocalDate.now();
+        LocalDate happyBirthday = null;
+        DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
-
-
-
-        SimpleDateFormat formatDate = new SimpleDateFormat("dd.MM.yyyy - EEEE");
-        Calendar calendar = Calendar.getInstance();
-
-        nowDate = new Date(System.currentTimeMillis());
-        happyBirthday = new Date(System.currentTimeMillis());
-        System.out.println(formatDate.format(date) + " - ");
-
-        do{
+        //input dialog with user
+        do {
             try {
                 System.out.println("Type date (format dd.MM.yyyy):");
                 Scanner scanner = new Scanner(System.in);
-                happyBirthday = new SimpleDateFormat("dd.MM.yyyy").parse(scanner.nextLine());
+
+                //correct input text
+                String inputDate = scanner.nextLine().replaceAll("[^\\d\\.]", "").trim();
+                if (inputDate.matches("\\d{1,2}\\.\\d{1,2}\\.\\d\\d\\d\\d")) {
+                    String[] inTextArr = inputDate.split("\\.");
+                    inputDate = "";
+                    for (int i = 0; i < 3; i++) {
+                        if (i == 2) {
+                            inputDate += inTextArr[i];
+                        } else if (inTextArr[i].length() == 1) {
+                            inputDate += "0" + inTextArr[i] + ".";
+                        } else {
+                            inputDate += inTextArr[i] + ".";
+                        }
+                    }
+                }
+
+                happyBirthday = LocalDate.parse(inputDate, formatDate);
                 exitLoop = true;
-            }catch (Exception e){
+            } catch (DateTimeParseException e) {
                 System.out.println("Not correct date.");
                 exitLoop = false;
             }
-        }while(!exitLoop);
+        } while (!exitLoop);
 
-        do{
-            if(nowDate.compareTo(happyBirthday) > 0){
-
-                happyBirthdayCal.add();
+        //print all days
+        counter = 0;
+        do {
+            if (nowDate.compareTo(happyBirthday) > 0) {
+                System.out.println(counter + " - " + happyBirthday.format(formatDate) + " " +
+                        happyBirthday.getDayOfWeek().toString() + "(" +
+                        happyBirthday.getDayOfWeek().getDisplayName(TextStyle.FULL, new Locale("ru")) +
+                        ")");
+                happyBirthday = happyBirthday.plusYears(1);
                 exitLoop = false;
-            }else{
+                counter++;
+            } else {
                 exitLoop = true;
             }
-        }while(!exitLoop);
-
+        } while (!exitLoop);
+        counter = 0;
     }
 }
