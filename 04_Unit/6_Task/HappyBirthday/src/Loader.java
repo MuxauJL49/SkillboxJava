@@ -8,19 +8,18 @@ import java.util.Scanner;
 public class Loader {
     public static void main(String[] args) {
         boolean exitLoop;
-        int counter;
         LocalDate nowDate = LocalDate.now();
         LocalDate happyBirthday = null;
-        DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("d.M.yyyy");
+        Locale localeRu = new Locale("ru");
 
         //input dialog with user
         do {
             try {
                 System.out.println("Type date (format dd.MM.yyyy):");
                 Scanner scanner = new Scanner(System.in);
-
-                //correct input text
                 String inputDate = scanner.nextLine().replaceAll("[^\\d\\.]", "").trim();
+                /* old shit
                 if (inputDate.matches("\\d{1,2}\\.\\d{1,2}\\.\\d\\d\\d\\d")) {
                     String[] inTextArr = inputDate.split("\\.");
                     inputDate = "";
@@ -33,8 +32,7 @@ public class Loader {
                             inputDate += inTextArr[i] + ".";
                         }
                     }
-                }
-
+                }*/
                 happyBirthday = LocalDate.parse(inputDate, formatDate);
                 exitLoop = true;
             } catch (DateTimeParseException e) {
@@ -43,8 +41,22 @@ public class Loader {
             }
         } while (!exitLoop);
 
+
         //print all days
-        counter = 0;
+        for (int year = 0; ; year++) {
+            var d = happyBirthday;
+            if (nowDate.compareTo(d) > 0) {
+                System.out.println(year + " - " + d.format(formatDate) + " " +
+                        d.getDayOfWeek().toString() + "(" +
+                        d.getDayOfWeek().getDisplayName(TextStyle.FULL, localeRu) +
+                        ")");
+                happyBirthday = d.plusYears(1);
+            } else {
+                break;
+            }
+        }
+
+/*        counter = 0;
         do {
             if (nowDate.compareTo(happyBirthday) > 0) {
                 System.out.println(counter + " - " + happyBirthday.format(formatDate) + " " +
@@ -58,6 +70,6 @@ public class Loader {
                 exitLoop = true;
             }
         } while (!exitLoop);
-        counter = 0;
+        counter = 0;*/
     }
 }

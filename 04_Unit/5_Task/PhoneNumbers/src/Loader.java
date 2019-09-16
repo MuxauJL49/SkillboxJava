@@ -7,6 +7,7 @@ public class Loader {
         Scanner scaner = new Scanner(System.in);
 
         for (; ; ) {
+            String incorrectFormatMsg = "Incorrect number phone. Try again (+7 999 888 77 66 for example";
             System.out.println("Type number phone or other command(exit, print)");
             String inString = scaner.nextLine();
 
@@ -20,12 +21,12 @@ public class Loader {
             }
 
             inString = inString.replaceAll("[^\\d]", "");
-            if (inString.length() == 10) {
-                phoneBook.add(7 + inString);
-            } else if (inString.length() == 11) {
-                phoneBook.add(7 + inString.substring(1));
-            } else {
-                System.out.println("Incorrect number phone. Try again (+7 999 888 77 66 for example");
+            String regex = "^([7|8])?\\d{10}";
+            String result = inString.matches(regex) ? inString.replaceFirst(regex, "+7 $2") : incorrectFormatMsg;
+            if (result == incorrectFormatMsg){
+                System.out.println(incorrectFormatMsg);
+            }else{
+                phoneBook.add(result);
             }
         }
     }

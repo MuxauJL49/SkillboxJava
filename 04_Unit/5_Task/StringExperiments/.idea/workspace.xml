@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74551ef3-e027-45c0-ba92-5e70ee5f73c4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../../3_Task/DeliveryBox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../3_Task/DeliveryBox/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PhoneNumbers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PhoneNumbers/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PhoneNumbers/src/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PhoneNumbers/src/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../text/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../text/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../text/src/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../text/src/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6_Task/HappyBirthday/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../6_Task/HappyBirthday/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6_Task/HappyBirthday/src/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../6_Task/HappyBirthday/src/Loader.java" afterDir="false" />
     </list>
     <ignored path="StringExperiments.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Loader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+            <state relative-caret-position="272">
+              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,9 +60,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="124" />
-    <option name="y" value="50" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="318" />
+    <option name="y" value="240" />
     <option name="width" value="1382" />
     <option name="height" value="877" />
   </component>
@@ -67,6 +72,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -84,11 +90,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="FullScreen" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
@@ -231,9 +237,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="124" y="50" width="1382" height="877" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18656716" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Palette&#9;" order="3" />
@@ -278,8 +284,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Loader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        <state relative-caret-position="272">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
