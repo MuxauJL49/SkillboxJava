@@ -2,7 +2,7 @@
 public class Loader {
     public static void main(String[] args) {
 
-        printArr(arrOfArr(60));
+        printArr(arrOfArr(43));
     }
 
 
