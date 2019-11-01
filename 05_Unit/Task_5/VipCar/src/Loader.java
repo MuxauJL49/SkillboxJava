@@ -28,26 +28,26 @@ public class Loader {
             }
 
 
-            time[0] = System.currentTimeMillis();
+            time[0] = System.nanoTime();
             resultSearch = vipCarArr.contains(inputText);
-            time[1] = System.currentTimeMillis();
+            time[1] = System.nanoTime();
             System.out.println("ArrayList(contains) = " + resultSearch + "  number - " + inputText + " Time - " + (time[1] - time[0]));
 
-            time[0] = System.currentTimeMillis();
+            time[0] = System.nanoTime();
             int positionItem = Collections.binarySearch(vipCarArr, inputText);
-            time[1] = System.currentTimeMillis();
+            time[1] = System.nanoTime();
             resultSearch = positionItem >= 0;
             System.out.println("ArrayList(binarySearch)= " + resultSearch + " number - " + inputText + " Time - " + (time[1] - time[0]));
 
-            time[0] = System.currentTimeMillis();
+            time[0] = System.nanoTime();
             resultSearch = vipCartHach.contains(inputText);
-            time[1] = System.currentTimeMillis();
+            time[1] = System.nanoTime();
             System.out.println("HashSet(contains) = " + resultSearch + " number - " + inputText + " Time - " + (time[1] - time[0]));
 
 
-            time[0] = System.currentTimeMillis();
+            time[0] = System.nanoTime();
             resultSearch = vipCarTree.contains(inputText);
-            time[1] = System.currentTimeMillis();
+            time[1] = System.nanoTime();
             System.out.println("TreeSet(contains) = " + resultSearch + " number - " + inputText + " Time - " + (time[1] - time[0]));
         }
     }
@@ -59,8 +59,9 @@ public class Loader {
             if (i < 9) {
                 reg += 0;
                 reg += i + 1;
-            } else
+            } else {
                 reg += (i + 1);
+            }
 
             for (String letterOne : LETTER_IN_NUMBER) {
                 for (int j = 0; j < 10; j++) {
