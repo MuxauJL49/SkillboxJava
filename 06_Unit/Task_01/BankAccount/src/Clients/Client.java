@@ -4,7 +4,6 @@ import Accounts.MainAccount;
 
 public abstract class Client {
 
-    private static int countAccountNubmer = 1;
     private MainAccount account;
     private String ACCOUNT_NUMBER;
     private String ownerName;
@@ -15,13 +14,13 @@ public abstract class Client {
     private String extraAdress;
 
     public Client(){
-        ACCOUNT_NUMBER = "00000" + countAccountNubmer;
-        countAccountNubmer++;
+        ACCOUNT_NUMBER = createAcountNumber();
         account = createAccount();
     }
 
 
     protected abstract MainAccount createAccount();
+    protected abstract String createAcountNumber();
 
     public MainAccount getAccount() {
         return account;
@@ -54,6 +53,4 @@ public abstract class Client {
     public String getExtraAdress() {
         return extraAdress;
     }
-
-
 }
