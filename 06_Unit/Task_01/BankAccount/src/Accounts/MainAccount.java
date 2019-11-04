@@ -9,45 +9,39 @@ public class MainAccount {
 
     public MainAccount(double money) {
         super();
-        if (!inputMoney(money)) {
-            throw new RuntimeException("Not correct amount!");
+        if (!deposit(money)) {
         }
     }
 
-    public boolean inputMoney(double inMoney) {
+    public boolean deposit(double inMoney) {
         return upAmountMoney(inMoney);
     }
 
-    public boolean outputMoney(double outMoney) {
+    public boolean withdraw(double outMoney) {
         return downAmountMoney(outMoney);
     }
 
     private boolean upAmountMoney(double inMoney) {
         if (inMoney < 0d) {
-            System.out.println("Error in input amount");
             return false;
         }
-        System.out.println("Credited " + inMoney + " rub");
         amountMoney += inMoney;
         return true;
     }
 
     private boolean downAmountMoney(double outMoney) {
-        if (outMoney < 0d || !checkAmount(outMoney)) {
-            System.out.println("Error in output money");
+        if (outMoney < 0d || !isBalanceGreaterThen(outMoney)) {
             return false;
         }
-        System.out.println("Debited " + outMoney + " rub");
         amountMoney -= outMoney;
         return true;
     }
 
-    private boolean checkAmount(double money) {
-        return (amountMoney - money > 0d) ? true : false;
+    private boolean isBalanceGreaterThen(double money) {
+        return amountMoney >= money;
     }
 
     public double getAmountMoney() {
-        System.out.println("You have " + amountMoney + " rub");
         return amountMoney;
     }
 }

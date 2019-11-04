@@ -8,22 +8,24 @@ public class DepositoryAccount extends MainAccount {
     private LocalDate lastInputMoney;
 
     public DepositoryAccount() {
-        super();
         lastInputMoney = LocalDate.now();
     }
 
     @Override
-    public boolean inputMoney(double inMoney) {
+    public boolean deposit(double inMoney) {
         lastInputMoney = LocalDate.now();
-        return super.inputMoney(inMoney);
+        return super.deposit(inMoney);
     }
 
     @Override
-    public boolean outputMoney(double outMoney) {
+    public boolean withdraw(double outMoney) {
         if (LocalDate.now().compareTo(lastInputMoney.plusDays(30)) > 0) {
-            System.out.println("You can't get money. Last date - " + lastInputMoney.format(formatDate));
             return false;
         }
-        return super.outputMoney(outMoney);
+        return super.withdraw(outMoney);
+    }
+
+    public String getLastInputMoney(){
+        return lastInputMoney.format(formatDate);
     }
 }
