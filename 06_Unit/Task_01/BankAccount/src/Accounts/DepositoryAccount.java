@@ -25,7 +25,7 @@ public class DepositoryAccount extends MainAccount {
         return super.withdraw(outMoney);
     }
 
-    public String getLastInputMoney(){
+    public String getLastInputMoney() {
         return lastInputMoney.format(formatDate);
     }
 }

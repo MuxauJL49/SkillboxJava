@@ -13,13 +13,14 @@ public abstract class Client {
     private String mainAddress;
     private String extraAdress;
 
-    public Client(){
+    public Client() {
         ACCOUNT_NUMBER = createAcountNumber();
         account = createAccount();
     }
 
 
     protected abstract MainAccount createAccount();
+
     protected abstract String createAcountNumber();
 
     public MainAccount getAccount() {
