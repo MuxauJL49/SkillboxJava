@@ -14,14 +14,6 @@ public class MainAccount {
     }
 
     public boolean deposit(double inMoney) {
-        return upAmountMoney(inMoney);
-    }
-
-    public boolean withdraw(double outMoney) {
-        return downAmountMoney(outMoney);
-    }
-
-    private boolean upAmountMoney(double inMoney) {
         if (inMoney < 0d) {
             return false;
         }
@@ -29,7 +21,7 @@ public class MainAccount {
         return true;
     }
 
-    private boolean downAmountMoney(double outMoney) {
+    public boolean withdraw(double outMoney) {
         if (outMoney < 0d || !isBalanceGreaterThen(outMoney)) {
             return false;
         }

@@ -15,7 +15,7 @@ public class Loader {
             "Create 2 - Individual\n" +
             "Create 3 - Entity\n" +
             "Exit - for exit\n" +
-            "Choose (num client) -  in development...\n" +
+            "Choose -  in development...\n" +
             "Withdraw - withdraw money to active account\n" +
             "Deposit - deposit money to active account\n" +
             "List - print data\n";
@@ -26,6 +26,7 @@ public class Loader {
         DepositoryAccount depositoryAccount = new DepositoryAccount();
         CreditAccount creditAccount = new CreditAccount();
         double amountMoney = 0d;
+        String activeAccount = "Nothing";
 
 
         amountMoney = 500d;
@@ -53,7 +54,9 @@ public class Loader {
         consoleOperationResult(true, "Your balanse is " + creditAccount.getAmountMoney());
 
 
+        System.out.println("\nHello!");
         for (; ; ) {
+            System.out.println("Active account - " + activeAccount);
             System.out.println("Create your account type kind Account or write \"help\"");
             String inputString = scanner.nextLine();
             if (inputString.toUpperCase().equals("EXIT")) {
@@ -61,6 +64,7 @@ public class Loader {
                 break;
             } else if (inputString.toUpperCase().equals("HELP")) {
                 System.out.println(helpCommand);
+                continue;
             } else if (inputString.toUpperCase().equals("CREATE 1")) {
                 client = new IndividualEntrepreneur();
                 allClients.add(client);
@@ -73,8 +77,15 @@ public class Loader {
             } else if (client == null) {
                 //check empty active client
                 System.out.println("You need create client");
+                continue;
             } else if (inputString.toUpperCase().equals("CHOOSE")) {
-                System.out.println("This part in development...");
+                System.out.println("chose account from 1 to " + allClients.size());
+                int positionAccount = scanner.nextInt() - 1;
+                if (positionAccount < 0 || positionAccount > allClients.size()) {
+                    System.out.println("Incorrect integer");
+                    continue;
+                }
+                client = allClients.get(positionAccount);
                 //work with array list clients
             } else if (inputString.toUpperCase().equals("WITHDRAW")) {
                 System.out.println("Type amount of money (Withdraw):");
@@ -85,13 +96,14 @@ public class Loader {
                 inputString = scanner.nextLine();
                 consoleOperationResult(client.getAccount().deposit(Double.parseDouble(inputString)));
             } else if (inputString.toUpperCase().equals("LIST")) {
-                System.out.println("CLIENT NUMBER - MONEY");
+                System.out.println("ID - CLIENT NUMBER - MONEY");
                 for (Client cl : allClients) {
-                    System.out.println(cl.getACCOUNT_NUMBER() + " - " + cl.getAccount().getAmountMoney());
+                    System.out.println((allClients.indexOf(cl) + 1) + " - " + cl.getACCOUNT_NUMBER() + " - " + cl.getAccount().getAmountMoney());
                 }
             } else {
                 System.out.println("Incorrect command");
             }
+            activeAccount = client.getACCOUNT_NUMBER();
         }
     }
 
