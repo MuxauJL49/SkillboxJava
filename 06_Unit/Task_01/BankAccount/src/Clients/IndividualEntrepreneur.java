@@ -3,9 +3,17 @@ package Clients;
 import Accounts.MainAccount;
 
 public class IndividualEntrepreneur extends Client {
+    private static final String PREFIX_ACC_NUM = "101";
+    private static int coutnerIE = 1;
+    private static final double SMALL_COMMISSION = 0.005;
+    private static final double HIGH_COMMISSION = 0.01;
 
-    private static String PREFIX_ACC_NUM = "101";
-    private static int coutnerIE = 0;
+
+    public IndividualEntrepreneur() {
+        super(PREFIX_ACC_NUM);
+        coutnerIE++;
+    }
+
 
     @Override
     protected MainAccount createAccount() {
@@ -14,11 +22,9 @@ public class IndividualEntrepreneur extends Client {
             public boolean deposit(double inMoney) {
                 double commission = 0d;
                 if (inMoney < 1000) {
-                    //commission is 1%
-                    commission = inMoney * 0.01;
+                    commission = inMoney * HIGH_COMMISSION;
                 } else {
-                    //commission is 0.5%
-                    commission = inMoney * 0.005;
+                    commission = inMoney * SMALL_COMMISSION;
                 }
                 return super.deposit(inMoney - commission);
             }
@@ -27,9 +33,8 @@ public class IndividualEntrepreneur extends Client {
     }
 
     @Override
-    protected String createAcountNumber() {
-        coutnerIE++;
-        return PREFIX_ACC_NUM + String.format("%8s", coutnerIE).replace(' ', '0');
+    protected int getCounterObject() {
+        return coutnerIE;
     }
 
     @Override

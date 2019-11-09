@@ -7,12 +7,6 @@ public class MainAccount {
         amountMoney = 0d;
     }
 
-    public MainAccount(double money) {
-        super();
-        if (!deposit(money)) {
-        }
-    }
-
     public boolean deposit(double inMoney) {
         if (inMoney < 0d) {
             return false;

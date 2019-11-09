@@ -7,7 +7,6 @@ public class CreditAccount extends MainAccount {
         percent = 0.01d;
     }
 
-
     @Override
     public boolean withdraw(double outMoney) {
         return super.withdraw(outMoney + (outMoney * percent));

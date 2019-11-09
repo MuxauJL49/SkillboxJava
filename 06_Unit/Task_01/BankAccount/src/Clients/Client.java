@@ -6,22 +6,21 @@ public abstract class Client {
 
     private MainAccount account;
     private String ACCOUNT_NUMBER;
-    private String ownerName;
-    private String ownerLastName;
-    private String ownerMiddleName;
-    private String sex;
-    private String mainAddress;
-    private String extraAdress;
 
-    public Client() {
-        ACCOUNT_NUMBER = createAcountNumber();
+
+    public Client(String prefixAccNum) {
+        createAcountNumber(prefixAccNum);
         account = createAccount();
     }
 
 
     protected abstract MainAccount createAccount();
 
-    protected abstract String createAcountNumber();
+    protected abstract int getCounterObject();
+
+    private void createAcountNumber(String prefixAccNum) {
+        ACCOUNT_NUMBER = String.format("%s%8s", prefixAccNum, getCounterObject()).replace(' ', '0');
+    }
 
     public MainAccount getAccount() {
         return account;
@@ -31,27 +30,4 @@ public abstract class Client {
         return ACCOUNT_NUMBER;
     }
 
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public String getOwnerLastName() {
-        return ownerLastName;
-    }
-
-    public String getOwnerMiddleName() {
-        return ownerMiddleName;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public String getMainAddress() {
-        return mainAddress;
-    }
-
-    public String getExtraAdress() {
-        return extraAdress;
-    }
 }

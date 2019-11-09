@@ -15,46 +15,19 @@ public class Loader {
             "Create 2 - Individual\n" +
             "Create 3 - Entity\n" +
             "Exit - for exit\n" +
-            "Choose -  in development...\n" +
+            "Choose -  choose client\n" +
             "Withdraw - withdraw money to active account\n" +
             "Deposit - deposit money to active account\n" +
             "List - print data\n";
 
 
     public static void main(String[] args) {
-        MainAccount mainAccount = new MainAccount();
-        DepositoryAccount depositoryAccount = new DepositoryAccount();
-        CreditAccount creditAccount = new CreditAccount();
-        double amountMoney = 0d;
-        String activeAccount = "Nothing";
 
+        firstTask();
 
-        amountMoney = 500d;
-        consoleOperationResult(mainAccount.deposit(amountMoney), "Deposit " + amountMoney + " rub");
-        amountMoney = 300d;
-        consoleOperationResult(mainAccount.withdraw(amountMoney), "Withdraw " + amountMoney + " rub");
-        consoleOperationResult(true, "Your balance is " + mainAccount.getAmountMoney());
-        amountMoney = 99999d;
-        consoleOperationResult(mainAccount.withdraw(amountMoney), "Withdraw " + amountMoney + " rub");
-        System.out.println();
-
-        amountMoney = 70000d;
-        consoleOperationResult(depositoryAccount.deposit(amountMoney), "Deposit  " + amountMoney + " rub");
-        amountMoney = 5333d;
-        consoleOperationResult(depositoryAccount.withdraw(amountMoney), "Withdraw " + amountMoney + " rub");
-        consoleOperationResult(true, "Your balance is " + depositoryAccount.getAmountMoney());
-        System.out.println();
-
-        amountMoney = 100000d;
-        consoleOperationResult(creditAccount.deposit(amountMoney), "Deposit " + amountMoney + " rub");
-        amountMoney = -444d;
-        consoleOperationResult(creditAccount.deposit(amountMoney), "Deposit " + amountMoney + " rub");
-        amountMoney = 500d;
-        consoleOperationResult(creditAccount.withdraw(amountMoney), "Withdraw " + amountMoney + " rub");
-        consoleOperationResult(true, "Your balanse is " + creditAccount.getAmountMoney());
-
-
+        //Second task
         System.out.println("\nHello!");
+        String activeAccount = "Nothing";
         for (; ; ) {
             System.out.println("Active account - " + activeAccount);
             System.out.println("Create your account type kind Account or write \"help\"");
@@ -92,7 +65,7 @@ public class Loader {
                 inputString = scanner.nextLine();
                 consoleOperationResult(client.getAccount().withdraw(Double.parseDouble(inputString)));
             } else if (inputString.toUpperCase().equals("DEPOSIT")) {
-                System.out.println("Type amount of money (Withdraw):");
+                System.out.println("Type amount of money (Deposit):");
                 inputString = scanner.nextLine();
                 consoleOperationResult(client.getAccount().deposit(Double.parseDouble(inputString)));
             } else if (inputString.toUpperCase().equals("LIST")) {
@@ -117,12 +90,40 @@ public class Loader {
     }
 
     private static void consoleOperationResult(boolean result) {
-        //extra operation is nothing
+        //If "extra information" is nothing
         consoleOperationResult(result, "");
     }
 
-    private static double convertAndCheckInputText(String inputText) {
-        //in developing...
-        return 0.d;
+    private static void firstTask(){
+        double amountMoney = 0d;
+
+        MainAccount mainAccount = new MainAccount();
+        DepositoryAccount depositoryAccount = new DepositoryAccount();
+        CreditAccount creditAccount = new CreditAccount();
+
+
+        amountMoney = 500d;
+        consoleOperationResult(mainAccount.deposit(amountMoney), "Deposit " + amountMoney + " rub");
+        amountMoney = 300d;
+        consoleOperationResult(mainAccount.withdraw(amountMoney), "Withdraw " + amountMoney + " rub");
+        consoleOperationResult(true, "Your balance is " + mainAccount.getAmountMoney());
+        amountMoney = 99999d;
+        consoleOperationResult(mainAccount.withdraw(amountMoney), "Withdraw " + amountMoney + " rub");
+        System.out.println();
+
+        amountMoney = 70000d;
+        consoleOperationResult(depositoryAccount.deposit(amountMoney), "Deposit  " + amountMoney + " rub");
+        amountMoney = 5333d;
+        consoleOperationResult(depositoryAccount.withdraw(amountMoney), "Withdraw " + amountMoney + " rub");
+        consoleOperationResult(true, "Your balance is " + depositoryAccount.getAmountMoney());
+        System.out.println();
+
+        amountMoney = 100000d;
+        consoleOperationResult(creditAccount.deposit(amountMoney), "Deposit " + amountMoney + " rub");
+        amountMoney = -444d;
+        consoleOperationResult(creditAccount.deposit(amountMoney), "Deposit " + amountMoney + " rub");
+        amountMoney = 500d;
+        consoleOperationResult(creditAccount.withdraw(amountMoney), "Withdraw " + amountMoney + " rub");
+        consoleOperationResult(true, "Your balanse is " + creditAccount.getAmountMoney());
     }
 }

@@ -6,8 +6,12 @@ import Accounts.MainAccount;
 public class Entity extends Client {
 
     private static String PREFIX_ACC_NUM = "103";
-    private static int counterEntity = 0;
+    private static int counterEntity = 1;
 
+    public Entity() {
+        super(PREFIX_ACC_NUM);
+        counterEntity++;
+    }
 
     @Override
     protected MainAccount createAccount() {
@@ -15,8 +19,7 @@ public class Entity extends Client {
     }
 
     @Override
-    protected String createAcountNumber() {
-        counterEntity++;
-        return PREFIX_ACC_NUM + String.format("%8s", counterEntity).replace(' ', '0');
+    protected int getCounterObject() {
+        return counterEntity;
     }
 }
