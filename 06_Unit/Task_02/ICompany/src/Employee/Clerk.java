@@ -2,7 +2,7 @@ package Employee;
 
 import Company.Company;
 
-public class Clerk extends PrimaryData {
+public class Clerk extends AbstractEmployee {
     private static final String NAME_POSITION = "Clerk";
 
     public Clerk(double FTE, double salary, Company company) {
@@ -18,5 +18,10 @@ public class Clerk extends PrimaryData {
     @Override
     public String getNamePosition() {
         return NAME_POSITION;
+    }
+
+    @Override
+    public double getEarnMoneyForCompany() {
+        return 0;
     }
 }
